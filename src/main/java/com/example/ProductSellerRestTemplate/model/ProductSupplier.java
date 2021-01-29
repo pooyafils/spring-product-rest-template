@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-public class ProductSupplier {
+public class ProductSupplier  {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
