@@ -7,6 +7,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
+import java.net.URI;
+import java.net.URL;
+
 @Component
 public class ProductTemplate {
 
@@ -26,5 +29,8 @@ public class ProductTemplate {
 
    public ResponseEntity<Product[]> getAllProduts(){
  return restTemplate.getForEntity(apihost+PRODUCT_PATH,Product[].class);
+    }
+    public URI postProduct(Product product){
+    return     restTemplate.postForLocation(apihost+PRODUCT_PATH,product);
     }
 }

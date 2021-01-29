@@ -4,9 +4,7 @@ import com.example.ProductSellerRestTemplate.model.Product;
 import com.example.ProductSellerRestTemplate.templates.ProductTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,5 +20,10 @@ public class ProductSellerController {
     @GetMapping
     public ResponseEntity <Product[]> getAllProducts(){
         return productTemplate.getAllProduts();
+    }
+    @PostMapping
+    ResponseEntity<Product> postProduct(@RequestBody Product product){
+        productTemplate.postProduct(product);
+        return ResponseEntity.ok(product);
     }
 }
