@@ -33,5 +33,8 @@ public class ProductTemplate {
     public URI postProduct(Product product){
     return     restTemplate.postForLocation(apihost+PRODUCT_PATH,product);
     }
+public void editProduct(int id,Product product){
 
+         restTemplate.put(apihost+PRODUCT_PATH+id,product);
+}
 }

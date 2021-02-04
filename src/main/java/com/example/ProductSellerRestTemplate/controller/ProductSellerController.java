@@ -26,4 +26,11 @@ public class ProductSellerController {
         productTemplate.postProduct(product);
         return ResponseEntity.ok(product);
     }
+    @PutMapping("/{id}")
+    public ResponseEntity<Product> edit(@PathVariable int id,@RequestBody Product product){
+        System.out.println(product);
+        productTemplate.editProduct(id,product);
+        return ResponseEntity.ok(   product);
+
+    }
 }
